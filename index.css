@@ -1,0 +1,63 @@
+/* Normalise CSS */
+html, body{
+    background-color: black;
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+/* Header Css */
+/* header{
+    background-color: grey;
+} */ 
+.container{
+    width: 100%;
+    max-width: 1242px;
+    margin: 0 auto;
+}
+.header-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.left-cont, .right-cont{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.header-brand{
+    max-width: 110px;
+}
+.main-nav{
+    list-style: none;
+    display: inline-flex;
+    flex-direction: row;
+}
+.nav-item{
+    color: #e5e5e5;
+    margin-right: 20px;
+    opacity: 0.83;
+}
+.main-nav .active{
+    color: white;
+    opacity: 1;
+    font-weight: 500;
+}
+.right-cont{
+    color: white;;
+}
+.right-cont i{
+    margin-right: 22px;
+    cursor: pointer;
+}
+.right-cont img{
+    max-width: 36px;
+    margin-right: 22px;
+    cursor: pointer;
+}
+/* Responsive CSS  */
+@media (max-width:767px){
+    .main-nav{
+        display: none;
+    }
+}
