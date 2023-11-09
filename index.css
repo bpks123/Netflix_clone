@@ -7,13 +7,21 @@ html, body{
 }
 
 /* Header Css */
-/* header{
-    background-color: grey;
-} */ 
+header{
+    background-color: transparent;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+} 
 .container{
     width: 100%;
-    max-width: 1242px;
+    max-width: 1250px;
     margin: 0 auto;
+}
+*::-webkit-scrollbar{
+    display: none;
 }
 .header-container{
     display: flex;
@@ -55,9 +63,120 @@ html, body{
     margin-right: 22px;
     cursor: pointer;
 }
+/* Movies section CSS */
+.movies-section{
+
+}
+.movie-section-heading{
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.explore-nudge{
+    color: #54b9c5;
+    font-size: 12px;
+    display: none;
+}
+.movie-section-heading:hover .explore-nudge{
+    display: inline-block;
+}
+.movies-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.movie-item{
+    width: 245px;
+    object-fit: contain;
+    margin-right: 6px;
+    border-radius: 4px; 
+}
+.movie-item:hover{
+    transform: scale(1.2);
+    transition: transform ease 0.4s;
+}
+
+/* Banner Section */
+.banner-section{
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 98vh;
+    padding-top: 80px;
+    position: relative;
+}
+.banner-content{
+    display: flex;
+    flex-direction: column;   
+    /* padding-top: 70px;  */
+}
+.banner__title{
+    color: white;
+    font-size: 84px;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    max-width: 50%;
+}
+.banner__info{
+    margin-bottom: 14px;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: white ;
+}
+.banner__overview{
+    font-size: 16.4px;
+    color: white;
+    line-height: 1.3;
+    max-width: 40%;
+}
+.action-buttons-cont{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.action-button{
+    border: none;
+    background-color: white;
+    padding: 8px 23px;
+    margin-right: 11px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    z-index: 1;
+}
+.action-button:last-child{
+    background-color: rgba(109, 109, 110, 0.7);
+}
+.banner__fadeBottom{
+    height: 120px;
+    background: linear-gradient(180deg, 
+    transparent,
+    rgba(37,37,37,0.61),
+    #141414
+    );
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+
 /* Responsive CSS  */
 @media (max-width:767px){
     .main-nav{
         display: none;
+    }
+    .banner__overview, .banner__title{
+        max-width: 100%;
     }
 }
