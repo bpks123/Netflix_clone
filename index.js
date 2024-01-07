@@ -13,9 +13,9 @@ const apiPaths={
 
 //Boot up the app
 function init(){
-    //fetchAndBuildMovieSections(apiPaths.fetchTrending,'Trending Now')
+    // fetchAndBuildMovieSections(apiPaths.fetchTrending,'Trending Now')
     fetchTrendingMovies()
-    //fetchAndBuildAllSections()
+    fetchAndBuildAllSections()
 }
 
 function fetchTrendingMovies(){
@@ -92,7 +92,7 @@ function buildMoviesSection(list, categoryName){
     }).join('')
 
     const moviesSectionHTML=`
-    <h2 class="movie-section-heading">${categoryName}<span class="explore-nudge">Explore All</span></h2>
+    <h2 class="movie-section-heading">${categoryName} <span class="explore-nudge">Explore All</span></h2>
     <div class="movies-row">
         ${movieListHTML}
     </div>
@@ -107,4 +107,9 @@ function buildMoviesSection(list, categoryName){
 
 window.addEventListener('load',function(){
     init()
+    window.addEventListener('scroll',function(){
+        const header=document.getElementById('header')
+        if(window.scrollY>5) header.classList.add('black-bg')
+        else header.classList.remove('black-bg')
+    })
 })
